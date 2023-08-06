@@ -5,21 +5,21 @@
 class Addr < Formula
   desc "Look up route origin information from the command-line"
   homepage "https://github.com/thatmattlove/addr"
-  version "0.0.2"
+  version "0.0.3"
   license "BSD-3-Clause-Clear"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/thatmattlove/addr/releases/download/v0.0.2/addr_0.0.2_darwin_arm64.tar.gz"
-      sha256 "e313c327aed84a4dddb99c1f52a5bd8eae1a79a99179d8ab56fc5955f3715854"
+      url "https://github.com/thatmattlove/addr/releases/download/v0.0.3/addr_0.0.3_darwin_arm64.tar.gz"
+      sha256 "601235d7952cf9e8a81b9ba564f31109709e6578091feab8e4cbbbe3959a7b24"
 
       def install
         bin.install "addr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/thatmattlove/addr/releases/download/v0.0.2/addr_0.0.2_darwin_amd64.tar.gz"
-      sha256 "0bde012796f78946b7bbe4abd0b6f63f8a08346ef84bfdb4f6a5a5023f20aa01"
+      url "https://github.com/thatmattlove/addr/releases/download/v0.0.3/addr_0.0.3_darwin_amd64.tar.gz"
+      sha256 "b5130d174516798606a99ce61a2c7fbe6997ee096de4cc5e32a99a901eff155e"
 
       def install
         bin.install "addr"
@@ -28,25 +28,25 @@ class Addr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/thatmattlove/addr/releases/download/v0.0.2/addr_0.0.2_linux_arm64.tar.gz"
-      sha256 "9f32a8451e1c283ee2804be7a8f22b0a0b362e1fe8e8055eb29e7bded6e32025"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/thatmattlove/addr/releases/download/v0.0.3/addr_0.0.3_linux_armv6.tar.gz"
+      sha256 "0765f9ddefee618691ce12649007762b21c719a56b34a932cee28679870512dd"
 
       def install
         bin.install "addr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/thatmattlove/addr/releases/download/v0.0.2/addr_0.0.2_linux_amd64.tar.gz"
-      sha256 "bf48d7a579a0cbc2d7130c03672fecd075578a96091aa0a49a4053eee1ea1197"
+      url "https://github.com/thatmattlove/addr/releases/download/v0.0.3/addr_0.0.3_linux_amd64.tar.gz"
+      sha256 "58b4d4e45f8b81015cb8183c7ff0279515046e89f5c66c924344de54a393d2e8"
 
       def install
         bin.install "addr"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/thatmattlove/addr/releases/download/v0.0.2/addr_0.0.2_linux_armv6.tar.gz"
-      sha256 "b3be6d92746900062a106d9fb416642716155ff4f88e0a99514bc3e38828b407"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/thatmattlove/addr/releases/download/v0.0.3/addr_0.0.3_linux_arm64.tar.gz"
+      sha256 "638965b6473654afe06aaf659f9976f511d53f3c54238a1d817c69bd9f20c59a"
 
       def install
         bin.install "addr"
